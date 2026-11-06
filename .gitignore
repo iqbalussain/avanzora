@@ -1,53 +1,19 @@
-cat >> .gitignore <<'EOF'
-
-
-# Dependencies
 node_modules/
 **/node_modules/
-
-# Build outputs
+dist/
+build/
 .next/
 **/.next/
-dist/
-build/
+.wrangler/
 
-# Environment files
 .env
-.env.local
-.env.*.local
 .env.*
 !.env.example
-# Logs
+*.local
+
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
-
-# OS files
+*.log
 .DS_Store
 Thumbs.db
-*.log
-
-EOF
-
-# --- Dependencies & Package Managers ---
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# --- Build Outputs & Framework Caches ---
-.next/
-out/
-dist/
-build/
-.turbo/
-package-lock.json
-yarn.lock
-
-# --- Environment & Local Secrets ---
-.env
-.env*.local
-
-# --- Optional: Heavy Framer Static Asset Caches (Uncomment if needed) ---
-# imports/framer-exact/page-batch-1/public/assets/app.framerstatic.com/

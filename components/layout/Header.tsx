@@ -1,30 +1,72 @@
-import Link from 'next/link';
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+
+const templateUrl =
+  "https://buy.polar.sh/polar_cl_Vh9Iuo4sax2ytsA3hQ7kRDF0JaFPdw9qEYRVb2aO0xL";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Brand / Logo */}
-        <Link href="/" className="text-xl font-bold tracking-tight text-gray-900">
-          Avanzora
+    <header className="site-header">
+      <div className="site-header__inner">
+        <Link
+          to="/"
+          className="brand"
+          aria-label="Avanzora Solution home"
+          onClick={() => setMenuOpen(false)}
+        >
+          <span className="brand__mark" aria-hidden="true">
+            //
+          </span>
+          <span>AVANZORA SOLUTION</span>
         </Link>
 
-        {/* Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
-          <Link href="/" className="hover:text-gray-900 transition-colors">Home</Link>
-          <Link href="/about-us" className="hover:text-gray-900 transition-colors">About Us</Link>
-          <Link href="/projects" className="hover:text-gray-900 transition-colors">Projects</Link>
-        </nav>
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+        </button>
 
-        {/* Action Button */}
-        <div>
-          <Link 
-            href="/contact" 
-            className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-black rounded-full hover:bg-gray-800 transition-colors"
+        <nav
+          id="primary-navigation"
+          className={`primary-navigation${menuOpen ? " is-open" : ""}`}
+          aria-label="Main navigation"
+        >
+          <details className="nav-dropdown">
+            <summary>
+              Company <span className="chevron" aria-hidden="true" />
+            </summary>
+            <div className="nav-dropdown__menu">
+              <NavLink to="/about-us" onClick={() => setMenuOpen(false)}>
+                About us
+              </NavLink>
+              <a href="mailto:hello@lamosa.studio">Contact us</a>
+            </div>
+          </details>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => (isActive ? "is-active" : "")}
+            onClick={() => setMenuOpen(false)}
           >
-            Get in Touch
-          </Link>
-        </div>
+            Projects <span className="new-badge">New</span>
+          </NavLink>
+          <NavLink to="/blog" onClick={() => setMenuOpen(false)}>
+            Blog
+          </NavLink>
+          <NavLink to="/about-us" onClick={() => setMenuOpen(false)}>
+            About us
+          </NavLink>
+          <a className="button button--primary nav-template" href={templateUrl}>
+            Get Template <span aria-hidden="true">→</span>
+          </a>
+        </nav>
       </div>
     </header>
   );

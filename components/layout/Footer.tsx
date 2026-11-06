@@ -1,17 +1,37 @@
-import Link from 'next/link';
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-100 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="text-sm text-gray-500">
-          © {new Date().getFullYear()} Avanzora. All rights reserved.
-        </p>
-        <div className="flex space-x-6 text-sm text-gray-600">
-          <Link href="/" className="hover:text-gray-900">Home</Link>
-          <Link href="/about-us" className="hover:text-gray-900">About Us</Link>
-          <Link href="/projects" className="hover:text-gray-900">Projects</Link>
+    <footer className="site-footer">
+      <div className="footer-main">
+        <div className="footer-brand">
+          <Link to="/" className="brand">
+            <span className="brand__mark" aria-hidden="true">
+              //
+            </span>
+            <span>AVANZORA SOLUTION</span>
+          </Link>
+          <p>
+            Stay ahead with strategies uniting design, technology, and marketing
+            to deliver measurable growth.
+          </p>
         </div>
+        <div className="footer-links">
+          <span className="eyebrow">Explore</span>
+          <Link to="/projects">Projects</Link>
+          <Link to="/about-us">About us</Link>
+          <Link to="/blog">Blog</Link>
+        </div>
+        <div className="footer-links">
+          <span className="eyebrow">Get in touch</span>
+          <a href="mailto:hello@lamosa.studio">hello@lamosa.studio</a>
+          <a href="tel:+123456778">+1 23456778</a>
+          <Link to="/studio">Content studio</Link>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>© 2025 Avanzora. All rights reserved.</p>
+        <p>Built in Amity node by Seyed ussain iqbal</p>
       </div>
     </footer>
   );
