@@ -42,6 +42,8 @@ out/
 dist/
 build/
 .turbo/
+package-lock.json
+yarn.lock
 
 # --- Environment & Local Secrets ---
 .env
