@@ -6,6 +6,13 @@ import { useSanityContent } from "../hooks/useSanityContent";
 import { blogPostQuery, blogPostsQuery } from "../lib/sanity";
 import type { BlogPost } from "../types/content";
 
+function getImageUrl(
+  value: string | { asset?: { url?: string } } | null | undefined,
+) {
+  if (typeof value === "string") return value;
+  return value?.asset?.url;
+}
+
 function ArticlePage({ slug }: { slug: string }) {
   const query = blogPostQuery.replace("$slug", JSON.stringify(slug));
   const post = useSanityContent<BlogPost | null>(query, null);
@@ -21,6 +28,8 @@ function ArticlePage({ slug }: { slug: string }) {
       </section>
     );
   }
+
+  const coverUrl = getImageUrl(post.coverUrl);
 
   return (
     <article className="article-page">
@@ -38,9 +47,7 @@ function ArticlePage({ slug }: { slug: string }) {
           })}
         </time>
       </header>
-      {post.coverUrl && (
-        <img className="article-cover" src={post.coverUrl} alt="" />
-      )}
+      {coverUrl && <img className="article-cover" src={coverUrl} alt="" />}
       {post.body && (
         <div className="article-body">
           <PortableText value={post.body} />
@@ -69,22 +76,26 @@ export default function BlogPage() {
       <section className="section blog-list">
         {posts.length > 0 ? (
           <div className="blog-grid">
-            {posts.map((post) => (
-              <article className="blog-card" key={post.slug}>
-                {post.coverUrl && <img src={post.coverUrl} alt="" loading="lazy" />}
-                <time dateTime={post.publishedAt}>
-                  {new Date(post.publishedAt).toLocaleDateString("en", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </time>
-                <h2>
-                  <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-                </h2>
-                <p>{post.excerpt}</p>
-              </article>
-            ))}
+            {posts.map((post) => {
+              const coverUrl = getImageUrl(post.coverUrl);
+
+              return (
+                <article className="blog-card" key={post.slug}>
+                  {coverUrl && <img src={coverUrl} alt="" loading="lazy" />}
+                  <time dateTime={post.publishedAt}>
+                    {new Date(post.publishedAt).toLocaleDateString("en", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                  <h2>
+                    <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                  </h2>
+                  <p>{post.excerpt}</p>
+                </article>
+              );
+            })}
           </div>
         ) : (
           <div className="empty-state empty-state--large">
