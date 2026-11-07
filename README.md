@@ -1,6 +1,6 @@
 # Avanzora
 
-Editable React, TypeScript, and Vite frontend for the imported Avanzora Framer site. The original exports stay under `imports/`; a clean copy of the source exports is kept under `backups/untouched-imports/`. Generated dependencies and `.next` cache files are excluded from that backup.
+Editable React, TypeScript, and Vite frontend for the imported Avanzora Framer site. The original exports stay under `imports/`; the app uses the cleaned assets in `public/` and the editable code in `src/`.
 
 ## Local development
 
