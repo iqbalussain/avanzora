@@ -78,8 +78,10 @@ export interface AboutPageContent {
 export interface Project {
   title: string;
   slug: string;
-  categories: string[];
+  categories?: string[];
   description?: string;
+  storyHeadings?: string[];
+  story?: string[];
   gallery?: ImageValue[];
   coverUrl?: ImageValue;
   order?: number;
@@ -89,9 +91,13 @@ export interface BlogPost {
   title: string;
   slug: string;
   excerpt: string;
-  publishedAt: string;
+  publishedAt?: string;
+  author?: string;
+  categories?: string[];
+  readingTime?: string;
   coverUrl?: ImageValue;
   body?: PortableTextBlock[];
+  bodyText?: string[];
 }
 
 export function imageUrl(image?: ImageValue): string | undefined {

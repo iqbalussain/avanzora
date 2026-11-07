@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ContactCallout() {
   return (
     <section className="contact-callout">
@@ -5,13 +7,13 @@ export default function ContactCallout() {
         <p className="eyebrow">Let's start building</p>
         <h2>You focus on your company. We make it happen</h2>
         <p className="contact-callout__description">
-          Cloud computing infrastructure paired with robust local network
-          security to ensure end-to-end data safety.
+          Cloud computing infrastructure paired with robust local network security to ensure
+          end-to-end data safety.
         </p>
       </div>
-      <a className="button button--light" href="mailto:hello@lamosa.studio">
+      <Link className="button button--light" to="/contact-us">
         Book a Call <span aria-hidden="true">↗</span>
-      </a>
+      </Link>
     </section>
   );
 }

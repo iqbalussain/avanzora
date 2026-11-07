@@ -1,1 +1,1 @@
-export const schemaTypes = []
+export {schemaTypes} from '../../src/sanity/schemaTypes'

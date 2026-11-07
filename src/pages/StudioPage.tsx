@@ -10,8 +10,7 @@ export default function StudioPage() {
         <h1>Connect your Sanity project</h1>
         <p>
           Copy <code>.env.example</code> to <code>.env.local</code>, set
-          <code> VITE_SANITY_PROJECT_ID</code>, then restart the development
-          server.
+          <code> VITE_SANITY_PROJECT_ID</code>, then restart the development server.
         </p>
       </main>
     );

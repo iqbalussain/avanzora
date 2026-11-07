@@ -1,11 +1,26 @@
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
-const templateUrl =
-  "https://buy.polar.sh/polar_cl_Vh9Iuo4sax2ytsA3hQ7kRDF0JaFPdw9qEYRVb2aO0xL";
+const templateUrl = "https://buy.polar.sh/polar_cl_Vh9Iuo4sax2ytsA3hQ7kRDF0JaFPdw9qEYRVb2aO0xL";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
 
   return (
     <header className="site-header">
@@ -47,7 +62,12 @@ export default function Header() {
               <NavLink to="/about-us" onClick={() => setMenuOpen(false)}>
                 About us
               </NavLink>
-              <a href="mailto:hello@lamosa.studio">Contact us</a>
+              <NavLink to="/career" onClick={() => setMenuOpen(false)}>
+                Careers
+              </NavLink>
+              <NavLink to="/contact-us" onClick={() => setMenuOpen(false)}>
+                Contact us
+              </NavLink>
             </div>
           </details>
           <NavLink

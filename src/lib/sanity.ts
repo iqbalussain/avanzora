@@ -39,6 +39,8 @@ export const projectsQuery = `*[_type == "project"]|order(order asc){
   "slug": slug.current,
   categories,
   description,
+  storyHeadings,
+  story,
   "coverUrl": cover.asset->url,
   "gallery": gallery[].asset->url,
   order
@@ -49,6 +51,8 @@ export const projectDetailQuery = `*[_type == "project" && slug.current == $slug
   "slug": slug.current,
   categories,
   description,
+  storyHeadings,
+  story,
   "coverUrl": cover.asset->url,
   "gallery": gallery[].asset->url,
   order
@@ -59,6 +63,9 @@ export const blogPostsQuery = `*[_type == "blogPost" && defined(publishedAt)]|or
   "slug": slug.current,
   excerpt,
   publishedAt,
+  author,
+  categories,
+  readingTime,
   "coverUrl": cover.asset->url
 }`;
 
@@ -67,6 +74,9 @@ export const blogPostQuery = `*[_type == "blogPost" && slug.current == $slug && 
   "slug": slug.current,
   excerpt,
   publishedAt,
+  author,
+  categories,
+  readingTime,
   "coverUrl": cover.asset->url,
   body
 }`;

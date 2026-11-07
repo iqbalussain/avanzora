@@ -8,11 +8,17 @@ interface ProjectGridProps {
 export default function ProjectGrid({ projects }: ProjectGridProps) {
   return (
     <div className="project-grid">
-      {projects.map((project) => {
+      {projects.map((project, index) => {
         const cover = imageUrl(project.coverUrl);
+        const categories = project.categories ?? [];
 
         return (
-          <article className="project-card" key={project.slug}>
+          <article
+            className="project-card"
+            data-reveal
+            data-reveal-index={index}
+            key={project.slug}
+          >
             <div className="project-card__image">
               <Link to={`/projects/${project.slug}`} aria-label={project.title}>
                 {cover && <img src={cover} alt="" loading="lazy" />}
@@ -29,9 +35,9 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
                 ↗
               </span>
             </div>
-            {project.categories?.length > 0 && (
+            {categories.length > 0 && (
               <ul className="tag-list" aria-label="Project categories">
-                {project.categories.map((category) => (
+                {categories.map((category) => (
                   <li key={category}>{category}</li>
                 ))}
               </ul>

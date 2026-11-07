@@ -1,0 +1,10 @@
+﻿# Framer source/export archive and extracted assets - preserve exactly
+imports/
+**/imports/
+studio-avanzora/node_modules/
+node_modules/
+.next/
+**/.next/
+dist/
+build/
+coverage/

@@ -12,10 +12,7 @@ const storyImages = [
 ];
 
 export default function AboutPage() {
-  const fetched = useSanityContent<AboutPageContent>(
-    aboutPageQuery,
-    aboutFallback,
-  );
+  const fetched = useSanityContent<AboutPageContent>(aboutPageQuery, aboutFallback);
   const content = {
     ...aboutFallback,
     ...fetched,
@@ -31,7 +28,7 @@ export default function AboutPage() {
         <p className="page-hero__subtitle">{content.heroSubtitle}</p>
       </section>
 
-      <section className="section story-section">
+      <section className="section story-section" data-reveal>
         <div className="story-copy">
           <SectionHeading
             eyebrow="Our story"
@@ -42,14 +39,25 @@ export default function AboutPage() {
         </div>
         <div className="story-image-grid">
           {storyImages.map((src, index) => (
-            <img key={src} src={src} alt="" loading="lazy" data-position={index} />
+            <img
+              key={src}
+              src={src}
+              alt=""
+              loading="lazy"
+              data-position={index}
+              data-reveal="image"
+              data-reveal-index={index}
+            />
           ))}
         </div>
       </section>
 
       <section className="founders-strip" aria-label="Trusted by top founders">
         <span className="eyebrow">TRUSTED BY TOP FOUNDERS</span>
-        <div className="founders-strip__names" aria-label="Acme Corp, Quantum, APEX, Celestial and 50+ more">
+        <div
+          className="founders-strip__names"
+          aria-label="Acme Corp, Quantum, APEX, Celestial and 50+ more"
+        >
           <span>Acme Corp</span>
           <span>Quantum</span>
           <span>APEX</span>
@@ -69,7 +77,7 @@ export default function AboutPage() {
           {content.teamMembers.map((member) => {
             const portrait = imageUrl(member.imageUrl);
             return (
-              <article className="team-card" key={member.name}>
+              <article className="team-card" data-reveal key={member.name}>
                 {portrait && <img src={portrait} alt={member.name} loading="lazy" />}
                 <div>
                   <h3>{member.name}</h3>
@@ -90,7 +98,7 @@ export default function AboutPage() {
         </div>
         <div className="awards-list">
           {content.awards.map((award) => (
-            <article className="award-row" key={award.name}>
+            <article className="award-row" data-reveal key={award.name}>
               <h3>{award.name}</h3>
               <p>{award.description}</p>
               <time>{award.year}</time>

@@ -22,10 +22,10 @@ export default function HomePage() {
     <>
       <section className="home-hero" id="section-hero">
         <div className="hero-copy">
-          <h1>{content.heroTitle}</h1>
+          <h1 data-reveal>{content.heroTitle}</h1>
           <p>{content.heroDescription}</p>
         </div>
-        <div className="hero-media">
+        <div className="hero-media" data-reveal="image">
           <video
             autoPlay
             muted
@@ -46,11 +46,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section--metrics">
-        <SectionHeading
-          eyebrow="Proven & effective process."
-          title="That delivers results."
-        />
+      <section className="section section--metrics" data-reveal>
+        <SectionHeading eyebrow="Proven & effective process." title="That delivers results." />
         <div className="metrics-grid">
           {content.metrics.map((metric) => (
             <article className="metric-card" key={metric.title}>
@@ -62,7 +59,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section--services" id="section-services">
+      <section className="section section--services" id="section-services" data-reveal>
         <div className="section-intro-row">
           <SectionHeading
             eyebrow="What we do"
@@ -79,13 +76,13 @@ export default function HomePage() {
             return (
               <article
                 className={`service-card service-card--${index + 1}`}
+                data-reveal
+                data-reveal-index={index}
                 key={service.title}
               >
                 {cover && <img src={cover} alt="" loading="lazy" />}
                 <div className="service-card__content">
-                  <span className="service-card__number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                  <span className="service-card__number">{String(index + 1).padStart(2, "0")}</span>
                   <div>
                     <h3>{service.title}</h3>
                     <p>{service.description}</p>
@@ -100,7 +97,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section--process" id="section-process">
+      <section className="section section--process" id="section-process" data-reveal>
         <SectionHeading
           eyebrow="A proven process"
           title="Proven & effective process. That delivers results."
@@ -108,8 +105,13 @@ export default function HomePage() {
           align="center"
         />
         <div className="process-grid">
-          {content.processSteps.map((step) => (
-            <article className="process-step" key={step.number}>
+          {content.processSteps.map((step, index) => (
+            <article
+              className="process-step"
+              data-reveal
+              data-reveal-index={index}
+              key={step.number}
+            >
               <span className="process-step__number">{step.number}</span>
               <h3>{step.title}</h3>
               <p>{step.description}</p>
@@ -124,7 +126,7 @@ export default function HomePage() {
         <span>Monthly revenue</span>
       </section>
 
-      <section className="section section--pricing" id="section-pricing">
+      <section className="section section--pricing" id="section-pricing" data-reveal>
         <div className="section-intro-row">
           <SectionHeading
             eyebrow="Let's start building"
@@ -139,6 +141,8 @@ export default function HomePage() {
           {content.pricingPlans.map((plan, index) => (
             <article
               className={`pricing-card${index === 0 ? " pricing-card--featured" : ""}`}
+              data-reveal
+              data-reveal-index={index}
               key={plan.name}
             >
               <div className="pricing-card__heading">
@@ -163,17 +167,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section--testimonials" id="section-testimonials">
-        <SectionHeading
-          eyebrow="We're loved."
-          title="Just success stories."
-          align="center"
-        />
+      <section className="section section--testimonials" id="section-testimonials" data-reveal>
+        <SectionHeading eyebrow="We're loved." title="Just success stories." align="center" />
         <div className="testimonial-grid">
           {content.testimonials.map((testimonial) => {
             const portrait = imageUrl(testimonial.imageUrl);
             return (
-              <figure className="testimonial-card" key={testimonial.name}>
+              <figure className="testimonial-card" data-reveal key={testimonial.name}>
                 {testimonial.metric && (
                   <div className="testimonial-card__result">
                     <strong>{testimonial.metric}</strong>
@@ -182,9 +182,7 @@ export default function HomePage() {
                 )}
                 <blockquote>{testimonial.quote}</blockquote>
                 <figcaption>
-                  {portrait && (
-                    <img src={portrait} alt="" loading="lazy" />
-                  )}
+                  {portrait && <img src={portrait} alt="" loading="lazy" />}
                   <span>
                     <strong>{testimonial.name}</strong>
                     <small>{testimonial.role}</small>
@@ -196,12 +194,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section--faq" id="section-faq">
+      <section className="section section--faq" id="section-faq" data-reveal>
         <div className="faq-intro">
-          <SectionHeading
-            eyebrow="Got a question?"
-            title="We've got answers."
-          />
+          <SectionHeading eyebrow="Got a question?" title="We've got answers." />
           <a className="text-link" href="mailto:hello@lamosa.studio">
             Still have question? <span aria-hidden="true">↗</span>
           </a>

@@ -12,8 +12,8 @@ export default function Footer() {
             <span>AVANZORA SOLUTION</span>
           </Link>
           <p>
-            Stay ahead with strategies uniting design, technology, and marketing
-            to deliver measurable growth.
+            Stay ahead with strategies uniting design, technology, and marketing to deliver
+            measurable growth.
           </p>
         </div>
         <div className="footer-links">
@@ -21,6 +21,8 @@ export default function Footer() {
           <Link to="/projects">Projects</Link>
           <Link to="/about-us">About us</Link>
           <Link to="/blog">Blog</Link>
+          <Link to="/career">Careers</Link>
+          <Link to="/contact-us">Contact us</Link>
         </div>
         <div className="footer-links">
           <span className="eyebrow">Get in touch</span>
@@ -32,6 +34,10 @@ export default function Footer() {
       <div className="footer-bottom">
         <p>© 2025 Avanzora. All rights reserved.</p>
         <p>Built in Amity node by Seyed ussain iqbal</p>
+        <div className="footer-legal">
+          <Link to="/legal-pages/privacy-policy">Privacy policy</Link>
+          <Link to="/legal-pages/terms-of-service">Terms of service</Link>
+        </div>
       </div>
     </footer>
   );

@@ -13,7 +13,12 @@ const service = defineType({
   title: "Service",
   type: "object",
   fields: [
-    defineField({ name: "title", title: "Title", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
     defineField({ name: "description", title: "Description", type: "text", rows: 3 }),
     imageField(),
   ],
@@ -25,8 +30,18 @@ const metric = defineType({
   title: "Metric",
   type: "object",
   fields: [
-    defineField({ name: "value", title: "Value", type: "string", validation: (rule) => rule.required() }),
-    defineField({ name: "title", title: "Title", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "value",
+      title: "Value",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
     defineField({ name: "description", title: "Description", type: "text", rows: 3 }),
   ],
   preview: { select: { title: "title", subtitle: "value" } },
@@ -38,7 +53,12 @@ const processStep = defineType({
   type: "object",
   fields: [
     defineField({ name: "number", title: "Number", type: "string" }),
-    defineField({ name: "title", title: "Title", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
     defineField({ name: "description", title: "Description", type: "text", rows: 3 }),
   ],
   preview: { select: { title: "title", subtitle: "number" } },
@@ -49,8 +69,19 @@ const testimonial = defineType({
   title: "Testimonial",
   type: "object",
   fields: [
-    defineField({ name: "quote", title: "Quote", type: "text", rows: 4, validation: (rule) => rule.required() }),
-    defineField({ name: "name", title: "Name", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "quote",
+      title: "Quote",
+      type: "text",
+      rows: 4,
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "name",
+      title: "Name",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
     defineField({ name: "role", title: "Role", type: "string" }),
     defineField({ name: "metric", title: "Result metric", type: "string" }),
     defineField({ name: "metricDescription", title: "Metric description", type: "string" }),
@@ -64,7 +95,12 @@ const faq = defineType({
   title: "FAQ",
   type: "object",
   fields: [
-    defineField({ name: "question", title: "Question", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "question",
+      title: "Question",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
     defineField({ name: "answer", title: "Answer", type: "text", rows: 4 }),
   ],
   preview: { select: { title: "question" } },
@@ -75,7 +111,12 @@ const pricingPlan = defineType({
   title: "Pricing plan",
   type: "object",
   fields: [
-    defineField({ name: "name", title: "Name", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "name",
+      title: "Name",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
     defineField({ name: "description", title: "Description", type: "text", rows: 3 }),
     defineField({ name: "price", title: "Price", type: "string" }),
     defineField({ name: "priceUnit", title: "Price unit", type: "string" }),
@@ -90,7 +131,12 @@ const teamMember = defineType({
   title: "Team member",
   type: "object",
   fields: [
-    defineField({ name: "name", title: "Name", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "name",
+      title: "Name",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
     defineField({ name: "role", title: "Role", type: "string" }),
     imageField(),
   ],
@@ -102,7 +148,12 @@ const award = defineType({
   title: "Award",
   type: "object",
   fields: [
-    defineField({ name: "name", title: "Name", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "name",
+      title: "Name",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
     defineField({ name: "description", title: "Description", type: "text", rows: 2 }),
     defineField({ name: "year", title: "Year", type: "string" }),
   ],
@@ -114,14 +165,39 @@ const homePage = defineType({
   title: "Home page",
   type: "document",
   fields: [
-    defineField({ name: "heroTitle", title: "Hero title", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "heroTitle",
+      title: "Hero title",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
     defineField({ name: "heroDescription", title: "Hero description", type: "text", rows: 3 }),
     defineField({ name: "metrics", title: "Metrics", type: "array", of: [{ type: "metric" }] }),
     defineField({ name: "services", title: "Services", type: "array", of: [{ type: "service" }] }),
-    defineField({ name: "processSteps", title: "Process steps", type: "array", of: [{ type: "processStep" }] }),
-    defineField({ name: "pricingPlans", title: "Pricing plans", type: "array", of: [{ type: "pricingPlan" }] }),
-    defineField({ name: "testimonials", title: "Testimonials", type: "array", of: [{ type: "testimonial" }] }),
-    defineField({ name: "faqs", title: "Frequently asked questions", type: "array", of: [{ type: "faq" }] }),
+    defineField({
+      name: "processSteps",
+      title: "Process steps",
+      type: "array",
+      of: [{ type: "processStep" }],
+    }),
+    defineField({
+      name: "pricingPlans",
+      title: "Pricing plans",
+      type: "array",
+      of: [{ type: "pricingPlan" }],
+    }),
+    defineField({
+      name: "testimonials",
+      title: "Testimonials",
+      type: "array",
+      of: [{ type: "testimonial" }],
+    }),
+    defineField({
+      name: "faqs",
+      title: "Frequently asked questions",
+      type: "array",
+      of: [{ type: "faq" }],
+    }),
   ],
   preview: { prepare: () => ({ title: "Home page" }) },
 });
@@ -131,11 +207,21 @@ const aboutPage = defineType({
   title: "About page",
   type: "document",
   fields: [
-    defineField({ name: "heroTitle", title: "Hero title", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "heroTitle",
+      title: "Hero title",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
     defineField({ name: "heroSubtitle", title: "Hero subtitle", type: "string" }),
     defineField({ name: "storyTitle", title: "Story title", type: "string" }),
     defineField({ name: "storyBody", title: "Story", type: "text", rows: 8 }),
-    defineField({ name: "teamMembers", title: "Team members", type: "array", of: [{ type: "teamMember" }] }),
+    defineField({
+      name: "teamMembers",
+      title: "Team members",
+      type: "array",
+      of: [{ type: "teamMember" }],
+    }),
     defineField({ name: "awards", title: "Awards", type: "array", of: [{ type: "award" }] }),
   ],
   preview: { prepare: () => ({ title: "About page" }) },
@@ -146,7 +232,12 @@ const project = defineType({
   title: "Project",
   type: "document",
   fields: [
-    defineField({ name: "title", title: "Title", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
     defineField({
       name: "slug",
       title: "Slug",
@@ -158,21 +249,23 @@ const project = defineType({
       name: "categories",
       title: "Categories",
       type: "array",
-      of: [{
-        type: "string",
-        options: {
-          list: [
-            "Fintech",
-            "SaaS",
-            "Motion Design",
-            "Branding",
-            "Web Design",
-            "Product Design",
-            "UI Design",
-            "UX Design",
-          ],
+      of: [
+        {
+          type: "string",
+          options: {
+            list: [
+              "Fintech",
+              "SaaS",
+              "Motion Design",
+              "Branding",
+              "Web Design",
+              "Product Design",
+              "UI Design",
+              "UX Design",
+            ],
+          },
         },
-      }],
+      ],
       options: { layout: "tags" },
     }),
     imageField("cover", "Cover image"),
@@ -183,6 +276,19 @@ const project = defineType({
       of: [{ type: "image", options: { hotspot: true } }],
     }),
     defineField({ name: "description", title: "Project result", type: "string" }),
+    defineField({
+      name: "story",
+      title: "Case study paragraphs",
+      type: "array",
+      of: [{ type: "text", rows: 4 }],
+    }),
+    defineField({
+      name: "storyHeadings",
+      title: "Case study section headings",
+      type: "array",
+      of: [{ type: "string" }],
+      validation: (rule) => rule.max(2),
+    }),
     defineField({ name: "order", title: "Order", type: "number" }),
   ],
   orderings: [
@@ -196,7 +302,12 @@ const blogPost = defineType({
   title: "Blog post",
   type: "document",
   fields: [
-    defineField({ name: "title", title: "Title", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
     defineField({
       name: "slug",
       title: "Slug",
@@ -207,6 +318,15 @@ const blogPost = defineType({
     defineField({ name: "excerpt", title: "Excerpt", type: "text", rows: 3 }),
     imageField("cover", "Cover image"),
     defineField({ name: "publishedAt", title: "Publish date", type: "datetime" }),
+    defineField({ name: "author", title: "Author", type: "string" }),
+    defineField({
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "string" }],
+      options: { layout: "tags" },
+    }),
+    defineField({ name: "readingTime", title: "Reading time", type: "string" }),
     defineField({
       name: "body",
       title: "Body",
@@ -215,7 +335,11 @@ const blogPost = defineType({
     }),
   ],
   orderings: [
-    { title: "Publish date, newest first", name: "publishedDesc", by: [{ field: "publishedAt", direction: "desc" }] },
+    {
+      title: "Publish date, newest first",
+      name: "publishedDesc",
+      by: [{ field: "publishedAt", direction: "desc" }],
+    },
   ],
   preview: { select: { title: "title", subtitle: "publishedAt", media: "cover" } },
 });

@@ -1,0 +1,126 @@
+import type { BlogPost } from "../types/content";
+
+const image = (name: string) => `/assets/images/${name}`;
+
+export const blogPostsFallback: BlogPost[] = [
+  {
+    title: "Why Motion Design is the New Differentiator in SaaS",
+    slug: "why-motion-design-is-the-new-differentiator-in-saas",
+    excerpt:
+      "Motion in web design used to be flair. Now, it’s function. When used well, motion helps users understand actions, feel feedback, and enjoy navigation. In SaaS products especially, motion is a silent language — guiding users through complex flows without the need for explanation.",
+    publishedAt: "2025-07-09",
+    author: "Elias Reed",
+    categories: ["Motion Design", "Design"],
+    readingTime: "8 min read",
+    coverUrl: image("blog-why-motion-design-is-the-new-differentiator-in-saas-ban.png"),
+    bodyText: [
+      "Buttons that pulse, loaders that animate, notifications that fade — all provide immediate responses that reassure users something is happening.",
+      "Without these microinteractions, interfaces feel lifeless and uncertain.",
+      "Think of brands like Linear, Vercel, or Superhuman — they feel premium not just because of their design, but because of their microanimations.",
+      "Transitions between views, hover animations, and subtle parallax scrolls create immersion and delight.",
+      "Design systems often forget motion. But how your brand moves is as much a signature as your font or logo. Define animation curves, speeds, and tone that match your brand.",
+      "Animations shouldn’t lag or stutter. Use GPU-optimized animations, minimize layout shifts, and test on multiple devices.",
+      "Tools like Lottie, Framer Motion, and GSAP allow rich motion without hurting performance.",
+      "SaaS today is competitive. Your interface needs to work — but also feel great. Motion design is the fastest way to stand out, simplify UX, and tell your brand’s story through movement.",
+    ],
+  },
+  {
+    title: "The Psychology Behind High-Converting Landing Pages",
+    slug: "the-psychology-behind-high-converting-landing-pages",
+    excerpt:
+      "Landing pages are the digital equivalent of a first impression — and we all know how much that matters. Whether you’re launching a new product or capturing leads for a service, your landing page has seconds to convince. While visuals and copy are essential, the real differentiator often lies in how you make users feel. That’s where psychology comes in.",
+    publishedAt: "2025-06-18",
+    author: "Leo Martínez",
+    categories: ["Motion Design", "Design"],
+    readingTime: "9 min read",
+    coverUrl: image("blog-the-psychology-behind-high-converting-landing-pages-ban.png"),
+    bodyText: [
+      "Humans judge visual appearance almost instantly. According to research, it takes just 0.05 seconds for users to form an opinion about your site. This means things like typography, layout, and spacing contribute directly to trust.",
+      "Trust isn’t built with a block of text — it’s built with clarity, cleanliness, and proof.",
+      "A strong visual hierarchy guides the viewer’s eye. People naturally scan from top left to bottom right and favor large, bold headlines.",
+      "Think of your page as a tour guide — show users exactly where to go next.",
+      "More options = less action. It’s called decision fatigue, and it’s real.",
+      "By reducing friction, you increase clarity — and clarity drives clicks.",
+      "People trust people. Displaying testimonials, user numbers, or case studies builds legitimacy quickly.",
+      "Also, use “safe” CTAs — phrases like “Try it Free” or “Book Without Obligation” reduce the perceived risk of clicking.",
+      "Psychologically, people hate missing out. Using FOMO (fear of missing out) sparingly and ethically can help boost urgency.",
+      "The psychology behind landing pages is subtle but powerful. With the right mix of visual structure, trust-building, and frictionless CTAs, you don’t just guide — you persuade.",
+    ],
+  },
+  {
+    title: "Building an MVP That Doesn’t Suck: 6 Rules to Follow",
+    slug: "building-an-mvp-that-doesn-t-suck-6-rules-to-follow",
+    excerpt:
+      "If you’re reading this, you’re probably building your MVP — or thinking about it. Great. But slow down. Before you hire a developer or dive into Figma, consider this: an MVP isn’t a product, it’s a test. Here’s how to build one that doesn’t waste months of your time.",
+    publishedAt: "2025-07-04",
+    author: "Leo Martínez",
+    categories: ["Design", "Technology"],
+    readingTime: "12 min read",
+    coverUrl: image("blog-building-an-mvp-that-doesn-t-suck-6-rules-to-follow-ban.jpg"),
+    bodyText: [
+      "Don’t start with your solution. Talk to 10 people in your target audience and ask them about their pain points. If they’re not frustrated, bored, or losing money — your product might not matter.",
+      "Your MVP should serve one purpose for one type of user. Anything else is a distraction.",
+      "Every feature you add to an MVP increases build time, bugs, and confusion. Ask: what’s the smallest version of the product that can still prove value?",
+      "You’re not building for Dribbble. You’re building to test. Focus on clarity and usability. If people get value despite the design, you’ve validated the core idea.",
+      "Launch early. Share it with real users. Watch them use it. What confused them? What did they love? Use this feedback loop to guide v2 — not assumptions.",
+      "Your MVP isn’t about perfection — it’s about progress. Stop building in silence. Start testing in public.",
+    ],
+  },
+  {
+    title: "5 Modern Marketing Campaigns That Nailed Storytelling",
+    slug: "5-modern-marketing-campaigns-that-nailed-storytelling",
+    excerpt:
+      "Storytelling isn’t a trend — it’s a timeless strategy. In a digital world where audiences are bombarded by ads, what stands out isn’t always the loudest. It’s the most human. Here’s a breakdown of 5 marketing campaigns that understood this and absolutely nailed their messaging.",
+    publishedAt: "2025-06-30",
+    author: "Amina Johnson",
+    categories: ["product-development", "Design"],
+    readingTime: "10 min read",
+    coverUrl: image("blog-5-modern-marketing-campaigns-that-nailed-storytelling-b.jpg"),
+    bodyText: [
+      "Launched during the pandemic, this campaign focused on resilience, diversity, and unity in sport. The clever split-screen montage of athletes across borders doing synchronized movements was a masterclass in editing — but the emotional punch is what made it go viral.",
+      "Instead of pushing features, Notion marketed a philosophy — organized minds make creative breakthroughs. Their campaign featured real users explaining how Notion helped them think, not just organize.",
+      "In one of the boldest moves in marketing history, Patagonia literally asked customers not to buy their products unless necessary — challenging overconsumption in fashion.",
+      "This campaign turned everyday users into artists by showing real photos and videos shot with an iPhone. It empowered the user and made the product feel like an extension of creativity.",
+      "Instead of listing features, Airbnb focused on people. Personal stories from hosts created an emotional bridge between platform and customer — making bookings feel meaningful, not transactional.",
+      "These brands didn’t just sell — they connected. In today’s saturated market, your story is your strategy. Lead with values, emotion, and authenticity.",
+    ],
+  },
+  {
+    title: "10 Modern Marketing Campaigns That Nailed Storytelling",
+    slug: "5-modern-marketing-campaigns-that-nailed-storytelling-copy",
+    excerpt:
+      "Storytelling isn’t a trend — it’s a timeless strategy. In a digital world where audiences are bombarded by ads, what stands out isn’t always the loudest. It’s the most human. Here’s a breakdown of 5 marketing campaigns that understood this and absolutely nailed their messaging.",
+    publishedAt: "2025-06-21",
+    author: "Maya Koji",
+    categories: ["Marketing", "Productivity"],
+    readingTime: "10 min read",
+    coverUrl: image("blog-5-modern-marketing-campaigns-that-nailed-storytelling-b.jpg"),
+    bodyText: [
+      "Launched during the pandemic, this campaign focused on resilience, diversity, and unity in sport. The clever split-screen montage of athletes across borders doing synchronized movements was a masterclass in editing — but the emotional punch is what made it go viral.",
+      "Instead of pushing features, Notion marketed a philosophy — organized minds make creative breakthroughs. Their campaign featured real users explaining how Notion helped them think, not just organize.",
+      "In one of the boldest moves in marketing history, Patagonia literally asked customers not to buy their products unless necessary — challenging overconsumption in fashion.",
+      "This campaign turned everyday users into artists by showing real photos and videos shot with an iPhone. It empowered the user and made the product feel like an extension of creativity.",
+      "Instead of listing features, Airbnb focused on people. Personal stories from hosts created an emotional bridge between platform and customer — making bookings feel meaningful, not transactional.",
+      "These brands didn’t just sell — they connected. In today’s saturated market, your story is your strategy. Lead with values, emotion, and authenticity.",
+    ],
+  },
+  {
+    title: "Building an MVP That Doesn’t Suck: 6 Rules to Follow Copy",
+    slug: "building-an-mvp-that-doesn-t-suck-6-rules-to-follow-copy",
+    excerpt:
+      "If you’re reading this, you’re probably building your MVP — or thinking about it. Great. But slow down. Before you hire a developer or dive into Figma, consider this: an MVP isn’t a product, it’s a test. Here’s how to build one that doesn’t waste months of your time.",
+    publishedAt: "2025-07-04",
+    author: "Tarek El-Hassan",
+    categories: ["Marketing", "Productivity"],
+    readingTime: "12 min read",
+    coverUrl: image("blog-building-an-mvp-that-doesn-t-suck-6-rules-to-follow-cop.jpg"),
+    bodyText: [
+      "Don’t start with your solution. Talk to 10 people in your target audience and ask them about their pain points. If they’re not frustrated, bored, or losing money — your product might not matter.",
+      "Your MVP should serve one purpose for one type of user. Anything else is a distraction.",
+      "Every feature you add to an MVP increases build time, bugs, and confusion. Ask: what’s the smallest version of the product that can still prove value?",
+      "You’re not building for Dribbble. You’re building to test. Focus on clarity and usability. If people get value despite the design, you’ve validated the core idea.",
+      "Launch early. Share it with real users. Watch them use it. What confused them? What did they love? Use this feedback loop to guide v2 — not assumptions.",
+      "Your MVP isn’t about perfection — it’s about progress. Stop building in silence. Start testing in public.",
+    ],
+  },
+];

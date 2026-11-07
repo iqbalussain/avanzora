@@ -12,7 +12,7 @@ export default function SectionHeading({
   align = "left",
 }: SectionHeadingProps) {
   return (
-    <div className={`section-heading section-heading--${align}`}>
+    <div className={`section-heading section-heading--${align}`} data-reveal>
       {eyebrow && <p className="eyebrow">{eyebrow}</p>}
       <h2>{title}</h2>
       {description && <p className="section-heading__description">{description}</p>}
