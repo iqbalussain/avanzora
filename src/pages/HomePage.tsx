@@ -1,4 +1,5 @@
 import ContactCallout from "../components/ContactCallout";
+import ProgressiveSmearCarousel from "../components/ProgressiveSmearCarousel";
 import SectionHeading from "../components/SectionHeading";
 import { Link } from "react-router-dom";
 import { homeFallback } from "../data/fallback";
@@ -66,6 +67,10 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <div className="home-carousel-band">
+        <ProgressiveSmearCarousel />
+      </div>
 
       <section className="section section--services" id="section-services" data-reveal>
         <div className="section-intro-row">

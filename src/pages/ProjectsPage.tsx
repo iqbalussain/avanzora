@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ContactCallout from "../components/ContactCallout";
 import ProjectGrid from "../components/ProjectGrid";
 import SectionHeading from "../components/SectionHeading";
-import { animationConfig } from "../animation/config";
 import { projectsFallback } from "../data/fallback";
 import { useSanityContent } from "../hooks/useSanityContent";
 import { projectsQuery } from "../lib/sanity";
@@ -32,15 +31,6 @@ export default function ProjectsPage() {
   }, [fetchedProjects]);
   const [activeFilter, setActiveFilter] = useState("All");
   const [searchText, setSearchText] = useState("");
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(
-    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-  );
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
-    mediaQuery.addEventListener("change", updatePreference);
-    return () => mediaQuery.removeEventListener("change", updatePreference);
-  }, []);
   const filteredProjects = useMemo(() => {
     const search = searchText.trim().toLowerCase();
     return projects.filter((project) => {
@@ -87,12 +77,7 @@ export default function ProjectsPage() {
             </button>
           ))}
         </div>
-        {filteredProjects[0] && (
-          <FeaturedProject
-            project={filteredProjects[0]}
-            prefersReducedMotion={prefersReducedMotion}
-          />
-        )}
+        {filteredProjects[0] && <FeaturedProject project={filteredProjects[0]} />}
         {filteredProjects.length > 1 && <ProjectGrid projects={filteredProjects.slice(1)} />}
         {filteredProjects.length === 0 && <p className="empty-state">No matching projects.</p>}
       </section>
@@ -119,15 +104,8 @@ export default function ProjectsPage() {
   );
 }
 
-function FeaturedProject({
-  project,
-  prefersReducedMotion,
-}: {
-  project: Project;
-  prefersReducedMotion: boolean;
-}) {
+function FeaturedProject({ project }: { project: Project }) {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const slides = useMemo(
     () =>
       Array.from(
@@ -144,33 +122,16 @@ function FeaturedProject({
     setActiveSlide(0);
   }, [project.slug]);
 
-  useEffect(() => {
-    if (isPaused || slides.length < 2 || prefersReducedMotion) {
-      return;
-    }
-
-    const timer = window.setInterval(
-      () => setActiveSlide((current) => (current + 1) % slides.length),
-      animationConfig.carousel.intervalMs,
-    );
-    return () => window.clearInterval(timer);
-  }, [isPaused, prefersReducedMotion, slides.length]);
-
   if (slides.length === 0) return null;
 
   const showSlide = (index: number) => {
     setActiveSlide((index + slides.length) % slides.length);
-    setIsPaused(true);
   };
 
   return (
     <article
       className="project-showcase"
       data-reveal
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onFocusCapture={() => setIsPaused(true)}
-      onBlurCapture={() => setIsPaused(false)}
     >
       <div className="project-showcase__image">
         {slides.map((src, index) => (

@@ -2085,7 +2085,86 @@ main {
 }
 
 .project-showcase__image img {
-  transition: opacity var(--carousel-transition, 450ms) ease;
+  transition: opacity var(--carousel-transition, 400ms) cubic-bezier(0.6, 0, 0.4, 1.01);
+}
+
+.home-carousel-band {
+  display: flex;
+  min-height: 440px;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressive-smear-carousel {
+  position: relative;
+  display: flex;
+  width: calc(min(100vw, 1440px) - 64px);
+  height: 285px;
+  min-width: 320px;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  perspective: 380px;
+}
+
+.progressive-smear-carousel__cards {
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+}
+
+.progressive-smear-carousel__card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  will-change: transform, opacity, width, height;
+}
+
+.progressive-smear-carousel__card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  user-select: none;
+}
+
+.progressive-smear-carousel__interaction-surface {
+  position: absolute;
+  z-index: 9999;
+  inset: 0;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.progressive-smear-carousel.is-dragging .progressive-smear-carousel__interaction-surface {
+  cursor: grabbing;
+}
+
+.progressive-smear-carousel:focus-visible .progressive-smear-carousel__interaction-surface {
+  outline: 2px solid var(--coral);
+  outline-offset: 4px;
+}
+
+@media (min-width: 810px) and (max-width: 1199px) {
+  .progressive-smear-carousel {
+    width: calc(min(100vw, 810px) - 48px);
+    height: 300px;
+  }
+}
+
+@media (max-width: 809px) {
+  .home-carousel-band {
+    min-height: 320px;
+  }
+
+  .progressive-smear-carousel {
+    width: calc(min(100vw, 400px) - 24px);
+    height: 225px;
+  }
 }
 
 .project-showcase__control {
