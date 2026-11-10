@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ContactCallout from "../components/ContactCallout";
 import SectionHeading from "../components/SectionHeading";
 import { aboutFallback } from "../data/fallback";
@@ -23,7 +24,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="page-hero page-hero--about">
-        <p className="eyebrow">AVANZORA SOLUTION</p>
+        <p className="eyebrow">AVANZORA</p>
         <h1>{content.heroTitle}</h1>
         <p className="page-hero__subtitle">{content.heroSubtitle}</p>
       </section>
@@ -33,7 +34,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Our story"
             title={content.storyTitle}
-            description="We are a dedicated team for a reason; this is our manifesto and what we believe in."
+            description="Software development, digital delivery and IT operations, brought together around business needs."
           />
           <p>{content.storyBody}</p>
         </div>
@@ -52,25 +53,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="founders-strip" aria-label="Trusted by top founders">
-        <span className="eyebrow">TRUSTED BY TOP FOUNDERS</span>
+      <section className="founders-strip" aria-label="Avanzora technology capabilities">
+        <span className="eyebrow">CONNECTED CAPABILITIES</span>
         <div
           className="founders-strip__names"
-          aria-label="Acme Corp, Quantum, APEX, Celestial and 50+ more"
+          aria-label="Software, digital experiences, cloud, networks and IT support"
         >
-          <span>Acme Corp</span>
-          <span>Quantum</span>
-          <span>APEX</span>
-          <span>Celestial</span>
-          <span>and 50+ more</span>
+          <span>Software</span>
+          <span>Digital experiences</span>
+          <span>Cloud</span>
+          <span>Networks</span>
+          <span>IT support</span>
         </div>
       </section>
 
       <section className="section section--team">
         <SectionHeading
-          eyebrow="Meet our"
-          title="amazing team."
-          description="Great things in business are never done by one person. They are done by a team of people - Steve jobs."
+          eyebrow="What we do"
+          title="Connected technology capabilities."
+          description="Software, infrastructure, networking and support, aligned with the needs of your business."
           align="center"
         />
         <div className="team-grid">
@@ -78,7 +79,7 @@ export default function AboutPage() {
             const portrait = imageUrl(member.imageUrl);
             return (
               <article className="team-card" data-reveal key={member.name}>
-                {portrait && <img src={portrait} alt={member.name} loading="lazy" />}
+                {portrait && <img src={portrait} alt="" loading="lazy" />}
                 <div>
                   <h3>{member.name}</h3>
                   <p>{member.role}</p>
@@ -91,10 +92,10 @@ export default function AboutPage() {
 
       <section className="section section--awards">
         <div className="section-intro-row">
-          <SectionHeading eyebrow="Awards," title="We won." />
-          <a className="text-link" href="mailto:hello@lamosa.studio">
-            We're hiring <span aria-hidden="true">↗</span>
-          </a>
+          <SectionHeading eyebrow="Capabilities" title="Practical business technology." />
+          <Link className="text-link" to="/contact-us">
+            Discuss a project <span aria-hidden="true">↗</span>
+          </Link>
         </div>
         <div className="awards-list">
           {content.awards.map((award) => (
@@ -110,30 +111,30 @@ export default function AboutPage() {
 
       <section className="section section--fit">
         <SectionHeading
-          eyebrow="Why work with us?"
-          title="We're the best fit"
-          description="Find out why Lamosa Is Your Smartest Choice for Project Success."
+          eyebrow="Our approach"
+          title="One technology partner. Connected services."
+          description="Bring digital development and business IT into a coordinated technology plan."
           align="center"
         />
         <div className="comparison-grid">
           <div className="comparison-card comparison-card--highlight">
-            <h3>Your option</h3>
+            <h3>Avanzora</h3>
             <ul>
-              <li>Affordable one-time pricing.</li>
-              <li>Launch-ready, deploys in days.</li>
-              <li>Flexible, easy to tailor with Framer.</li>
-              <li>Professionally crafted, conversion-focused.</li>
-              <li>Regular improvements &amp; Updates.</li>
-              <li>Proven template tested for results.</li>
+              <li>Digital development and IT services under one brand.</li>
+              <li>Solutions scoped around business requirements.</li>
+              <li>Websites, software and internal applications.</li>
+              <li>Cloud, network and infrastructure services.</li>
+              <li>Automation, reporting and system integrations.</li>
+              <li>Technical support and maintenance options.</li>
             </ul>
           </div>
           <div className="comparison-card">
-            <h3>Team / Freelancer</h3>
+            <h3>Separate technology providers</h3>
             <ul>
-              <li>Salary of $4000 - $10,000</li>
-              <li>Takes 4 - 8 weeks to go live</li>
-              <li>Hire a full time team</li>
-              <li>Probably. not assured</li>
+              <li>Separate providers for software and IT.</li>
+              <li>Different scopes across digital and infrastructure work.</li>
+              <li>More handoffs between technology suppliers.</li>
+              <li>Coordination across separate service relationships.</li>
             </ul>
           </div>
         </div>

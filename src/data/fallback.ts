@@ -3,287 +3,260 @@ import type { AboutPageContent, HomePageContent, Project } from "../types/conten
 const image = (name: string) => `/assets/images/${name}`;
 
 export const homeFallback: HomePageContent = {
-  heroTitle: "YOUR COMPLETE IT & DIGITAL INFRASTRUCTURE.",
+  heroTitle: "Your Complete Technology Partner.",
   heroDescription:
-    "Web engineering, cloud hosting, network setup, IP telephony, CCTV installation, and 24/7 rapid remote technical/ IT support—all built and managed under one roof",
+    "From custom software and digital experiences to cloud infrastructure, networking and managed IT support, Avanzora helps businesses build and manage the technology they depend on.",
   metrics: [
     {
-      value: "1%",
-      title: "Uptime & Network Reliability",
+      value: "Digital",
+      title: "Websites and applications",
       description:
-        "Enterprise-grade networking, local infrastructure, and edge routing built to keep your operations running seamlessly 24/7.",
+        "Corporate websites, e-commerce and web applications developed around your business needs.",
     },
     {
-      value: "0X",
-      title: "Faster Data-Driven Decisions",
+      value: "Software",
+      title: "Business systems",
       description:
-        "Interactive data analytics and custom reporting engines that turn raw business metrics into clear, actionable intelligence.",
+        "Custom software, ERP, POS, inventory, payroll and workforce tools.",
     },
     {
-      value: "1%",
-      title: "Seed + series A funding",
+      value: "Cloud",
+      title: "Hosting and infrastructure",
       description:
-        "Bespoke custom software engineering—delivering high-performance offline desktop tools and scalable cloud applications.",
+        "Hosting, servers, deployment, migration, DNS, SSL and backups.",
     },
     {
-      value: "12+",
-      title: "Awards recognition",
+      value: "IT",
+      title: "Networks and support",
       description:
-        "Deploying scalable cloud environments and secure on-premise networks to safeguard your data at every layer.",
+        "Business networking, Wi-Fi, structured cabling, CCTV, maintenance and technical assistance.",
     },
   ],
   services: [
     {
-      title: "Cloud Migration & Ops",
+      title: "Website & Digital Development",
       description:
-        "Seamless hybrid infrastructure backed by enterprise-grade local security for complete end-to-end data protection.",
+        "Corporate websites, e-commerce and web applications, with development, maintenance and optimization.",
       imageUrl: image("services-card-vy29lxghc.webp"),
     },
     {
-      title: "High-Impact Web Design",
+      title: "Business Software & Automation",
       description:
-        "Web Design & UX/UI. Crafting sleek, user-focused interfaces in Figma that drive engagement and conversions.",
+        "Custom applications, ERP and POS solutions, workflow automation, integrations, reporting and dashboards.",
       imageUrl: image("services-card-wlxfg4mi6.jpeg"),
     },
     {
-      title: "Custom ERP & Local Apps",
+      title: "Cloud, Hosting & Infrastructure",
       description:
-        "Custom Development, MVP prototyping, and an ongoing design partner for your product.",
+        "Web and VPS hosting, cloud infrastructure, server configuration, deployment, migration and backups.",
       imageUrl: image("services-card-bdovic0vi.jpg"),
     },
     {
-      title: "Network Architecture",
+      title: "Networking, Security & IT Support",
       description:
-        "Cloud computing infrastructure paired with robust local network security to ensure end-to-end data safety.",
+        "Business networks, Wi-Fi, cabling, CCTV, troubleshooting, maintenance and ongoing technical support.",
       imageUrl: image("services-card-klzjikktl.png"),
     },
   ],
   processSteps: [
     {
       number: "01",
-      title: "Discovery & Strategy",
+      title: "Understand your operation",
       description:
-        "We uncover your goals, audience, and challenges to build a clear roadmap for success.",
+        "Review your requirements, current systems and operational priorities.",
     },
     {
       number: "02",
-      title: "Design & Prototyping",
+      title: "Plan the right solution",
       description:
-        "Transforming insights into bold, user-focused designs that connect and convert.",
+        "Define a practical scope for the software, digital experience or infrastructure you need.",
     },
     {
       number: "03",
-      title: "Development & Launch",
+      title: "Build and deploy",
       description:
-        "From pixel to code, we craft high-performing websites and launch them flawlessly.",
+        "Develop, configure and launch the agreed technology solution.",
     },
     {
       number: "04",
-      title: "Optimization & Scale",
+      title: "Support and improve",
       description:
-        "We monitor, refine, and enhance to ensure continuous growth and lasting impact.",
+        "Discuss maintenance, improvements and ongoing support for your solution.",
     },
   ],
   pricingPlans: [
     {
-      name: "Product design",
-      description: "Ideal for launching or revamping a website or product to boost conversions.",
-      price: "$2,200",
-      priceUnit: "One time",
+      name: "Website & Digital Development",
+      description: "Websites, online stores and web applications developed around your business requirements.",
+      cta: "Request Quote",
+      priceUnit: "Custom scope based on functional requirements.",
       features: [
-        "Senior designer",
-        "One Active Request",
-        "7-10 Days delivery-time",
-        "SEO optimized",
-        "1-1 Private Slack channel",
-        "50% secured upfront payment",
-        "Add Framer Development +$1,000",
+        "Corporate and business websites",
+        "E-commerce websites and landing pages",
+        "Web application development",
+        "Frontend and backend development",
+        "Website maintenance and optimization",
       ],
     },
     {
-      name: "Design partner",
-      description:
-        "Perfect for monthly design partnerships, keeping your brand fresh and driving consistent conversions.",
-      priceUnit: "/ month",
+      name: "Business Software & Automation",
+      description: "Custom applications, business systems, integrations and workflow automation.",
+      cta: "Schedule Consultation",
+      priceUnit: "Scoped around enterprise modules & scale.",
       features: [
-        "Dedicated team & expert designers",
-        "Multiple requests under fair use",
-        "2-3 Days delivery-time",
-        "Monthly CRO & Growth Strategy",
-        "1-1 Private Slack channel",
-        "Framer development",
-        "Up to 8 pages + 404 page",
-        "50% secured upfront payment",
+        "Custom business applications",
+        "ERP, POS, inventory and workforce systems",
+        "Business process automation",
+        "API and system integrations",
+        "Reporting and dashboards",
       ],
     },
     {
-      name: "Custom",
-      description:
-        "Ideal for brands seeking unlimited design and motion support, delivering high-impact results without restrictions.",
-      label: "Limited spots",
-      priceUnit: "Starts at",
+      name: "Cloud, Networking & IT Support",
+      description: "Infrastructure, connectivity, security and technical support for business operations.",
+      cta: "Discuss Support Plan",
+      priceUnit: "Tailored maintenance & deployment packages.",
       features: [
-        "Dedicated team & expert designers",
-        "Unlimited requests",
-        "2 Days Delivery, monthly commitment",
-        "Advanced SEO & Marketing",
-        "1-1 Private Slack channel",
-        "Framer development",
-        "50% secured upfront payment",
+        "Web, VPS and cloud hosting",
+        "Server setup, deployment and migration",
+        "Business networking and CCTV",
+        "Infrastructure maintenance and backups",
+        "Technical assistance and consultation",
       ],
     },
   ],
   testimonials: [
     {
-      quote:
-        "Lamosa completely redefined our digital presence. Their strategic design approach and attention to user behavior boosted our conversion rate significantly. We went from just a pretty site to a performance-driven asset.",
-      name: "Julian Ortega",
-      role: "CEO",
-      metric: "62%",
-      metricDescription: "increase in mobile traffic retention",
+      quote: "We start with your business requirements and the systems you already rely on.",
+      name: "Requirements first",
+      role: "Our approach",
       imageUrl: image("testimonial-card-kdanvbptr-4.png"),
     },
     {
-      quote:
-        "We launched our new site in under three weeks and saw results almost immediately. The design felt premium from day one — exactly what we needed to stand out in a crowded market.",
-      name: "Melissa Gomez",
-      role: "Co-Founder",
-      metric: "3.1×",
-      metricDescription: "increase in qualified leads",
+      quote: "Recommendations are shaped around how your organization works.",
+      name: "Business focused",
+      role: "Our approach",
       imageUrl: image("testimonial-card-kdanvbptr.jpg"),
     },
     {
-      quote:
-        "From the first call, the team just got it. They redesigned our entire funnel and the impact was immediate — more signups, lower drop-off, and a brand that finally matched our ambition.",
-      name: "George Adams",
-      role: "CEO",
-      metric: "41%",
-      metricDescription: "reduction in drop-off rate",
+      quote: "Digital products and business infrastructure belong in the same technology conversation.",
+      name: "Connected services",
+      role: "Our approach",
       imageUrl: image("testimonial-card-kdanvbptr-2.jpg"),
     },
     {
-      quote:
-        "Lamosa completely redefined our digital presence. Their strategic design approach and attention to user behavior boosted our conversion rate significantly. We went from just a pretty site to a performance-driven asset.",
-      name: "Sarah Coleman",
-      role: "CMO",
-      metric: "2.3×",
-      metricDescription: "increase in lead conversion",
+      quote: "Software, cloud services and IT support can be scoped to work together.",
+      name: "Practical integration",
+      role: "Our approach",
       imageUrl: image("testimonial-card-kdanvbptr.png"),
     },
     {
-      quote:
-        "The team at Lamosa not only built us a beautiful platform—they made it fast, smart, and incredibly intuitive. Their UX insights and performance tweaks made a huge difference in keeping users engaged.",
-      name: "Marcus Levine",
-      role: "Co-founder",
-      metric: "45%",
-      metricDescription: "Reduced bounce rate",
+      quote: "We focus on useful, maintainable solutions rather than unnecessary complexity.",
+      name: "Fit for purpose",
+      role: "Our approach",
       imageUrl: image("testimonial-card-kdanvbptr-3.png"),
     },
     {
-      quote:
-        "Working with Lamosa helped us cut our launch timeline dramatically. They understand product goals and build with both speed and precision. Easily one of the best agencies we’ve worked with.",
-      name: "Amina Khatri",
-      role: "Head of Product",
-      metric: "3x",
-      metricDescription: "faster MVP launch",
+      quote: "Support and maintenance options are discussed alongside the solution requirements.",
+      name: "Ongoing support",
+      role: "Our approach",
       imageUrl: image("testimonial-card-kdanvbptr-2.png"),
     },
   ],
   faqs: [
     {
-      question: "What is included with each Framer template?",
-      answer:
-        "Each template comes with a fully responsive design, editable components, and SEO-friendly structure ready to customize.",
+      question: "What services does Avanzora provide?",
+      answer: "Avanzora provides software and website development, business applications, cloud and hosting services, networking, CCTV, IT support and business automation.",
     },
     {
-      question: "Do I need coding skills to use your templates?",
-      answer: "",
+      question: "Can you develop custom business software?",
+      answer: "Yes. Avanzora can develop business applications and systems such as ERP, POS, inventory, payroll and project-management tools based on business requirements.",
     },
     {
-      question: "Can I use a template for multiple projects?",
-      answer: "",
+      question: "Do you build websites and web applications?",
+      answer: "Yes. Services include corporate and e-commerce websites, landing pages and web applications.",
     },
     {
-      question: "Are the templates optimized for performance?",
-      answer: "",
+      question: "Do you provide hosting and cloud infrastructure?",
+      answer: "Yes. Services include hosting, VPS and cloud infrastructure, server configuration, deployment, migration, DNS, SSL and backups.",
     },
     {
-      question: "Do you offer support after purchase?",
-      answer: "",
+      question: "Can you install business networks and CCTV?",
+      answer: "Avanzora provides business networking, Wi-Fi, structured cabling and CCTV/IP camera systems.",
     },
     {
-      question: "Can I integrate third-party tools with these templates?",
-      answer: "",
+      question: "Do you offer ongoing IT support?",
+      answer: "Avanzora provides technical consultation, setup, troubleshooting and IT maintenance. Support arrangements should be confirmed for each engagement.",
     },
     {
-      question: "Do you offer customizations beyond the template?",
-      answer: "",
+      question: "Can you automate existing business processes?",
+      answer: "Avanzora can help with workflow automation, integrations, reporting and dashboards based on the systems and processes involved.",
     },
     {
-      question: "Will my template receive updates?",
-      answer: "",
+      question: "Can services be tailored to our requirements?",
+      answer: "Services can be scoped around your business requirements, existing technology and priorities.",
     },
   ],
 };
 
 export const aboutFallback: AboutPageContent = {
-  heroTitle: "Ambitious talents, for bold ideas.",
-  heroSubtitle: "creating a culture where ideas flow freely and innovation thrives.",
-  storyTitle: "Our story matters most",
+  heroTitle: "Technology. Built for Business.",
+  heroSubtitle: "Avanzora helps businesses build, operate and improve the technology they rely on.",
+  storyTitle: "One partner for business technology",
   storyBody:
-    "We believe great work comes from collaboration, curiosity, and a shared vision. Each team member, from designers to developers to strategists, brings unique skills and perspectives, creating a culture where ideas flow freely and innovation thrives. Beyond projects, we celebrate milestones together, share learnings, and support one another. Our bond goes beyond work, shaping Lamosa into not just a team but a community that’s driven to help brands grow and succeed.",
+    "Businesses rely on more than a website or a single IT provider. Avanzora connects digital development, business software, cloud infrastructure, networking and technical support. We focus on understanding how an organization works, then identifying practical technology that supports its needs.",
   teamMembers: [
     {
-      name: "Elias Reed",
-      role: "Founder & Creative Director",
+      name: "Software & applications",
+      role: "Websites, web apps and business systems",
       imageUrl: image("team-members-elias-reed-photo.jpg"),
     },
     {
-      name: "Maya Koji",
-      role: "Lead Product Designer",
+      name: "Cloud & hosting",
+      role: "Infrastructure, deployment and backups",
       imageUrl: image("team-members-maya-koji-photo.png"),
     },
     {
-      name: "Leo Martínez",
-      role: "Senior Full-Stack Developer",
+      name: "Networks & security",
+      role: "Business networks, Wi-Fi and CCTV",
       imageUrl: image("team-members-leo-martinez-photo.jpg"),
     },
     {
-      name: "Amina Johnson",
-      role: "Brand Strategist",
+      name: "Automation & data",
+      role: "Integrations, reporting and dashboards",
       imageUrl: image("team-members-amina-johnson-photo.png"),
     },
     {
-      name: "Tarek El-Hassan",
-      role: "UI Motion Designer",
+      name: "Technical support",
+      role: "Setup, troubleshooting and maintenance",
       imageUrl: image("team-members-tarek-el-hassan-photo.png"),
     },
   ],
   awards: [
     {
-      name: "Awwwards – Site of the Day",
-      description: "Recognizing outstanding design, creativity, and innovation in web experiences.",
-      year: "2025",
+      name: "Website & software development",
+      description: "Websites, web applications and custom business software.",
+      year: "Core service",
     },
     {
-      name: "FWA – Cutting Edge Award",
-      description: "Awarded for pushing creative and technical boundaries in web design.",
-      year: "2024",
+      name: "Cloud & infrastructure",
+      description: "Hosting, servers, deployment, migration and backup solutions.",
+      year: "Core service",
     },
     {
-      name: "CSS Design Awards – Best UI/UX",
-      description: "Celebrating cutting-edge user interface and user experience design.",
-      year: "2023",
+      name: "Networking & security",
+      description: "Business networks, structured cabling, Wi-Fi and CCTV systems.",
+      year: "Core service",
     },
     {
-      name: "Behance Interaction Design Feature",
-      description: "Spotlighting exceptional interaction design showcased to a global audience.",
-      year: "2023",
+      name: "IT support & maintenance",
+      description: "Technical setup, troubleshooting, consultation and ongoing support.",
+      year: "Core service",
     },
     {
-      name: "Webby Awards – Best Visual Design",
-      description: "Honoring excellence in visual aesthetics and creative digital storytelling.",
-      year: "2022",
+      name: "Automation & data",
+      description: "Workflow automation, integrations, reporting and dashboards.",
+      year: "Core service",
     },
   ],
 };

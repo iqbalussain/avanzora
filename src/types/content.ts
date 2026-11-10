@@ -37,6 +37,7 @@ export interface FaqItem {
 export interface PricingPlan {
   name: string;
   description: string;
+  cta?: string;
   price?: string;
   priceUnit?: string;
   label?: string;

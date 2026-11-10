@@ -5,21 +5,21 @@ import { homeFallback } from "../data/fallback";
 const contactDetails = [
   {
     label: "Email",
-    value: "hello@lamosa.studio",
-    href: "mailto:hello@lamosa.studio",
+    value: "iqbalussain@gmail.com",
+    href: "mailto:iqbalussain@gmail.com",
   },
   {
-    label: "Phone",
-    value: "+1 23456778",
-    href: "tel:+123456778",
+    label: "WhatsApp / Phone",
+    value: "+968 78301334",
+    href: "https://wa.me/96878301334",
   },
   {
-    label: "Address",
-    value: "447 Broadway, 2nd Floor, New York city, USA",
+    label: "Operational base",
+    value: "Muscat & Seeb, Sultanate of Oman",
   },
   {
     label: "Availability",
-    value: "Available from Monday to Friday, 9 AM - 6 PM GMT",
+    value: "Contact us to discuss support availability for your requirements.",
   },
 ];
 
@@ -28,10 +28,10 @@ export default function ContactPage() {
     <>
       <section className="page-hero page-hero--projects">
         <p className="eyebrow">Contact</p>
-        <h1 data-reveal>Get in touch with us.</h1>
+        <h1 data-reveal>Talk with Avanzora.</h1>
         <p className="page-hero__subtitle" data-reveal>
-          Have a project taking shape or a question worth talking through? Tell us what you’re
-          building, and our team will help you map the clearest path to making it real.
+          Tell us about the technology your business needs, from a website or business application
+          to cloud infrastructure, networking, CCTV or ongoing IT support.
         </p>
       </section>
 

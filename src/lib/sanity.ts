@@ -20,7 +20,7 @@ export const homePageQuery = `*[_type == "homePage"][0]{
   metrics[]{value, title, description},
   services[]{title, description, "imageUrl": image.asset->url},
   processSteps[]{number, title, description},
-  pricingPlans[]{name, description, price, priceUnit, label, features},
+  pricingPlans[]{name, description, cta, price, priceUnit, label, features},
   testimonials[]{quote, name, role, metric, metricDescription, "imageUrl": image.asset->url},
   faqs[]{question, answer}
 }`;

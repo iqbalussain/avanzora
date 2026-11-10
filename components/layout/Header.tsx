@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
-const templateUrl = "https://buy.polar.sh/polar_cl_Vh9Iuo4sax2ytsA3hQ7kRDF0JaFPdw9qEYRVb2aO0xL";
-
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
@@ -28,13 +26,13 @@ export default function Header() {
         <Link
           to="/"
           className="brand"
-          aria-label="Avanzora Solution home"
+          aria-label="Avanzora home"
           onClick={() => setMenuOpen(false)}
         >
           <span className="brand__mark" aria-hidden="true">
             //
           </span>
-          <span>AVANZORA SOLUTION</span>
+          <span>AVANZORA</span>
         </Link>
 
         <button
@@ -83,9 +81,9 @@ export default function Header() {
           <NavLink to="/about-us" onClick={() => setMenuOpen(false)}>
             About us
           </NavLink>
-          <a className="button button--primary nav-template" href={templateUrl}>
-            Get Template <span aria-hidden="true">→</span>
-          </a>
+          <Link className="button button--primary nav-template" to="/contact-us">
+            Contact Avanzora <span aria-hidden="true">→</span>
+          </Link>
         </nav>
       </div>
     </header>

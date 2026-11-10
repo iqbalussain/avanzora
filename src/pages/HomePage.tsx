@@ -1,5 +1,6 @@
 import ContactCallout from "../components/ContactCallout";
 import SectionHeading from "../components/SectionHeading";
+import { Link } from "react-router-dom";
 import { homeFallback } from "../data/fallback";
 import { useSanityContent } from "../hooks/useSanityContent";
 import { homePageQuery } from "../lib/sanity";
@@ -13,7 +14,11 @@ export default function HomePage() {
     metrics: fetched.metrics ?? homeFallback.metrics,
     services: fetched.services ?? homeFallback.services,
     processSteps: fetched.processSteps ?? homeFallback.processSteps,
-    pricingPlans: fetched.pricingPlans ?? homeFallback.pricingPlans,
+    pricingPlans: (fetched.pricingPlans ?? homeFallback.pricingPlans).map((plan, index) => ({
+      ...homeFallback.pricingPlans[index],
+      ...plan,
+      cta: plan.cta ?? homeFallback.pricingPlans[index]?.cta ?? "Request Quote",
+    })),
     testimonials: fetched.testimonials ?? homeFallback.testimonials,
     faqs: fetched.faqs ?? homeFallback.faqs,
   };
@@ -38,16 +43,19 @@ export default function HomePage() {
           </video>
         </div>
         <div className="hero-footer">
-          <span>Trusted by 1,200+ founders.</span>
-          <span>Turning ideas into bold brands.</span>
-          <a href="mailto:hello@lamosa.studio" aria-label="Start a project">
-            Start a project <span aria-hidden="true">↗</span>
-          </a>
+          <span>Digital products and software.</span>
+          <span>Infrastructure and IT support.</span>
+          <Link to="/contact-us" aria-label="Discuss a project">
+            Discuss a project <span aria-hidden="true">↗</span>
+          </Link>
         </div>
       </section>
 
       <section className="section section--metrics" data-reveal>
-        <SectionHeading eyebrow="Proven & effective process." title="That delivers results." />
+        <SectionHeading
+          eyebrow="What we bring together"
+          title="Technology for every part of your business."
+        />
         <div className="metrics-grid">
           {content.metrics.map((metric) => (
             <article className="metric-card" key={metric.title}>
@@ -63,12 +71,12 @@ export default function HomePage() {
         <div className="section-intro-row">
           <SectionHeading
             eyebrow="What we do"
-            title="From idea to scale."
-            description="We master our craft."
+            title="Build, connect and support your technology."
+            description="Digital products, business systems and infrastructure, planned around the way your organization works."
           />
-          <a className="text-link" href="mailto:hello@lamosa.studio">
-            Start A Project <span aria-hidden="true">↗</span>
-          </a>
+          <Link className="text-link" to="/contact-us">
+            Discuss a project <span aria-hidden="true">↗</span>
+          </Link>
         </div>
         <div className="service-grid">
           {content.services.map((service, index) => {
@@ -99,9 +107,9 @@ export default function HomePage() {
 
       <section className="section section--process" id="section-process" data-reveal>
         <SectionHeading
-          eyebrow="A proven process"
-          title="Proven & effective process. That delivers results."
-          description="We dive deep into your goals, audience, and challenges to craft a strategy that drives clear direction and impact."
+          eyebrow="A practical process"
+          title="From business needs to working technology."
+          description="We learn how your business operates, define a practical scope, implement the solution and help support it over time."
           align="center"
         />
         <div className="process-grid">
@@ -122,19 +130,19 @@ export default function HomePage() {
       </section>
 
       <section className="process-result" aria-label="Process results">
-        <strong>+429%</strong>
-        <span>Monthly revenue</span>
+        <strong>Unified Technology Execution</strong>
+        <span>Connecting software development, cloud infrastructure, and operational IT under one partner.</span>
       </section>
 
       <section className="section section--pricing" id="section-pricing" data-reveal>
         <div className="section-intro-row">
           <SectionHeading
-            eyebrow="Let's start building"
-            title="Choose a plan. That fits your needs."
-            description="Flexible plans designed to accelerate growth, with solutions that evolve with your business."
+            eyebrow="Engagement options"
+            title="Choose the right scope for your business."
+            description="From a defined digital project to ongoing technology support, recommendations are shaped around your requirements."
           />
           <p className="pricing-intro__aside">
-            We're the A-team you can trust and need to launch your product
+            Project scope and pricing depend on your requirements.
           </p>
         </div>
         <div className="pricing-grid">
@@ -154,9 +162,9 @@ export default function HomePage() {
               </div>
               <p className="pricing-card__description">{plan.description}</p>
               {plan.priceUnit && <p className="pricing-card__unit">{plan.priceUnit}</p>}
-              <a className="button button--dark" href="mailto:hello@lamosa.studio">
-                Get Started Now <span aria-hidden="true">↗</span>
-              </a>
+              <Link className="button button--dark" to="/contact-us">
+                {plan.cta} <span aria-hidden="true">↗</span>
+              </Link>
               <ul>
                 {plan.features.map((feature) => (
                   <li key={feature}>{feature}</li>
@@ -168,7 +176,11 @@ export default function HomePage() {
       </section>
 
       <section className="section section--testimonials" id="section-testimonials" data-reveal>
-        <SectionHeading eyebrow="We're loved." title="Just success stories." align="center" />
+        <SectionHeading
+          eyebrow="Our approach"
+          title="Technology should work for your business."
+          align="center"
+        />
         <div className="testimonial-grid">
           {content.testimonials.map((testimonial) => {
             const portrait = imageUrl(testimonial.imageUrl);
@@ -196,10 +208,10 @@ export default function HomePage() {
 
       <section className="section section--faq" id="section-faq" data-reveal>
         <div className="faq-intro">
-          <SectionHeading eyebrow="Got a question?" title="We've got answers." />
-          <a className="text-link" href="mailto:hello@lamosa.studio">
-            Still have question? <span aria-hidden="true">↗</span>
-          </a>
+          <SectionHeading eyebrow="Questions about working with Avanzora" title="How can we help?" />
+          <Link className="text-link" to="/contact-us">
+            Talk with Avanzora <span aria-hidden="true">↗</span>
+          </Link>
         </div>
         <div className="faq-list">
           {content.faqs.map((item) => (
