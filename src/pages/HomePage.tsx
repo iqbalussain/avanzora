@@ -2,12 +2,14 @@ import ContactCallout from "../components/ContactCallout";
 import ProgressiveSmearCarousel from "../components/ProgressiveSmearCarousel";
 import SectionHeading from "../components/SectionHeading";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { homeFallback } from "../data/fallback";
 import { useSanityContent } from "../hooks/useSanityContent";
 import { homePageQuery } from "../lib/sanity";
 import { imageUrl, type HomePageContent } from "../types/content";
 
 export default function HomePage() {
+  const [activeServiceIndex, setActiveServiceIndex] = useState(0);
   const fetched = useSanityContent<HomePageContent>(homePageQuery, homeFallback);
   const content = {
     ...homeFallback,
@@ -83,30 +85,41 @@ export default function HomePage() {
             Discuss a project <span aria-hidden="true">↗</span>
           </Link>
         </div>
-        <div className="service-grid">
-          {content.services.map((service, index) => {
-            const cover = imageUrl(service.imageUrl);
-            return (
-              <article
-                className={`service-card service-card--${index + 1}`}
-                data-reveal
-                data-reveal-index={index}
+        <div className="service-showcase">
+          <div className="service-accordion" aria-label="Avanzora services">
+            {content.services.map((service, index) => (
+              <button
+                aria-expanded={activeServiceIndex === index}
+                className={`service-accordion__item${activeServiceIndex === index ? " is-active" : ""}`}
                 key={service.title}
+                onClick={() => setActiveServiceIndex(index)}
+                type="button"
               >
-                {cover && <img src={cover} alt="" loading="lazy" />}
-                <div className="service-card__content">
-                  <span className="service-card__number">{String(index + 1).padStart(2, "0")}</span>
-                  <div>
-                    <h3>{service.title}</h3>
-                    <p>{service.description}</p>
-                  </div>
-                  <span className="service-card__arrow" aria-hidden="true">
-                    ↗
-                  </span>
-                </div>
-              </article>
-            );
-          })}
+                <span className="service-accordion__number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="service-accordion__copy">
+                  <strong>{service.title}</strong>
+                  {activeServiceIndex === index && <span>{service.description}</span>}
+                </span>
+                <span className="service-accordion__arrow" aria-hidden="true">↗</span>
+              </button>
+            ))}
+          </div>
+          <div className="service-showcase__media" aria-hidden="true">
+            {content.services.map((service, index) => {
+              const cover = imageUrl(service.imageUrl);
+              return cover ? (
+                <img
+                  alt=""
+                  className={activeServiceIndex === index ? "is-active" : ""}
+                  key={service.title}
+                  src={cover}
+                  loading={index === activeServiceIndex ? "eager" : "lazy"}
+                />
+              ) : null;
+            })}
+          </div>
         </div>
       </section>
 

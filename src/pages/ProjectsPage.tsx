@@ -110,7 +110,7 @@ function FeaturedProject({ project }: { project: Project }) {
     () =>
       Array.from(
         new Set(
-          [project.coverUrl, ...(project.gallery ?? [])]
+          [project.coverUrl, ...(project.gallery ?? []).slice(0, 2)]
             .map((image) => imageUrl(image))
             .filter((src): src is string => Boolean(src)),
         ),
